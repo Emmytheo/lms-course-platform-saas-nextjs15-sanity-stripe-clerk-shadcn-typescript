@@ -23,7 +23,7 @@ export default function DashboardLayout({
         disableTransitionOnChange
       >
         <SidebarProvider>
-          <div className="h-full">{children}</div>
+          <div className="h-full mt-4">{children}</div>
         </SidebarProvider>
       </ThemeProvider>
 
