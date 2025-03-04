@@ -20,7 +20,7 @@ export default function Header() {
             >
               <BookOpen className="h-6 w-6 text-primary" />
               <span className="text-xl font-bold bg-gradient-to-r from-primary/90 to-primary bg-clip-text text-transparent">
-                BANPAC LMS
+                 LearnR
               </span>
             </Link>
 
