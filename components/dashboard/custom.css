@@ -1,0 +1,7 @@
+
+/* body > div.h-full.mt-4 > div > aside.fixed.inset-y-0.left-0.top-16.z-40.bg-background.transition-all.duration-300.ease-in-out.lg\:z-50.lg\:block.border.w-full.translate-x-\[0px\].lg\:translate-x-0.lg\:w-96 > div > div > div.relative.overflow-hidden.flex-1.w-full > div > div  */
+.my-scroll > div > div
+{
+    display: block !important;
+    padding-bottom: 40px;
+}

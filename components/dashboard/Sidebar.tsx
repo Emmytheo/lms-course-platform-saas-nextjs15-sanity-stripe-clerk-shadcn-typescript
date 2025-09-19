@@ -34,6 +34,7 @@ import {
 import DarkModeToggle from "../DarkModeToggle";
 import { CourseProgress } from "@/components/CourseProgress";
 import { calculateCourseProgress } from "@/lib/courseProgress";
+import "./custom.css"
 
 interface SidebarProps {
   course: GetCourseByIdQueryResult;
@@ -81,11 +82,11 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
         <div className="flex items-center justify-between">
           <Link
             href="/my-courses"
-            className="flex items-center gap-x-2 text-sm hover:text-primary transition-colors"
+            className="items-center gap-x-2 text-sm hover:text-primary transition-colors flex"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="h-4 w-4 hidden md:flex"/>
             <div className="flex items-center gap-x-2">
-              <Library className="h-4 w-4" />
+              <Library className="h-4 w-4 hidden md:flex" />
               <span>Course Library</span>
             </div>
           </Link>
@@ -111,8 +112,8 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
           />
         </div>
       </div>
-      <ScrollArea className="flex-1">
-        <div className="p-2 lg:p-4">
+      <ScrollArea className="flex-1 w-full my-scroll">
+        <div className="p-2 lg:p-4 !pb-24">
           <Accordion
             type="multiple"
             className="w-full space-y-4"
@@ -208,9 +209,9 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
   return (
     <>
       {/* Thin Mobile Sidebar */}
-      <aside className="fixed inset-y-0 left-0 z-50 flex flex-col items-center w-[60px] border-r bg-background lg:hidden py-4 gap-y-4">
+      <aside className="fixed inset-y-0 left-0 z-50 flex flex-row items-center h-[60px] border-r bg-background lg:hidden px-4 gap-x-4">
         <TooltipProvider delayDuration={0}>
-          <Tooltip>
+          {/* <Tooltip>
             <TooltipTrigger asChild>
               <Link href="/" prefetch={false}>
                 <Button variant="ghost" size="icon" className="h-10 w-10">
@@ -221,7 +222,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
             <TooltipContent side="right">
               <p>Course Library</p>
             </TooltipContent>
-          </Tooltip>
+          </Tooltip> */}
 
           <Tooltip>
             <TooltipTrigger asChild>
@@ -249,10 +250,10 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
       {/* Main Sidebar - Desktop & Mobile */}
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-40 bg-background transition-all duration-300 ease-in-out",
-          "lg:z-50 lg:block lg:w-96 lg:border-r",
+          "fixed inset-y-0 left-0 top-16 z-40 bg-background transition-all duration-300 ease-in-out",
+          "lg:z-50 lg:block lg:w-96 border",
           isOpen
-            ? "w-[calc(100%-60px)] translate-x-[60px] lg:translate-x-0 lg:w-96"
+            ? "w-full translate-x-[0px] lg:translate-x-0 lg:w-96"
             : "translate-x-[-100%] lg:translate-x-0"
         )}
       >

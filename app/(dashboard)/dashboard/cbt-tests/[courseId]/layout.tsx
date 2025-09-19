@@ -4,8 +4,6 @@ import getCourseById from "@/sanity/lib/courses/getCourseById";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { getCourseProgress } from "@/sanity/lib/lessons/getCourseProgress";
 import { checkCourseAccess } from "@/lib/auth";
-import Header from "@/components/Header";
-import DashboardHeader from "@/components/DashboardHeader";
 
 interface CourseLayoutProps {
   children: React.ReactNode;
@@ -41,12 +39,8 @@ export default async function CourseLayout({
 
   return (
     <div className="h-full">
-      <DashboardHeader />
-      
       <Sidebar course={course} completedLessons={progress.completedLessons} />
-      
-      <main className="h-full mt-16 lg:pt-[64px] lg:pl-96">{children}</main>
-      
+      <main className="h-full lg:pt-[64px] pl-20 lg:pl-96">{children}</main>
     </div>
   );
 }

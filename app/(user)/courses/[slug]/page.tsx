@@ -34,7 +34,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="relative h-[60vh] w-full">
+      <div className="relative h-[63vh] xs:h-[55vh] sm:h-[55vh] md:h-[45vh] w-full">
         {course.image && (
           <Image
             src={urlFor(course.image).url() || ""}
@@ -45,11 +45,11 @@ export default async function CoursePage({ params }: CoursePageProps) {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black to-black/60" />
-        <div className="absolute inset-0 container mx-auto px-4 flex flex-col justify-end pb-12">
+        <div className="absolute inset-0 container mx-auto px-8 flex flex-col justify-end pb-12">
           <Link
             href="/"
             prefetch={false}
-            className="text-white mb-8 flex items-center hover:text-primary transition-colors w-fit"
+            className="text-white text-sm md:text-md mb-8 flex items-center hover:text-primary transition-colors w-fit"
           >
             <ArrowLeft className="mr-2 h-5 w-5" />
             Back to Courses
@@ -61,15 +61,15 @@ export default async function CoursePage({ params }: CoursePageProps) {
                   {course.category?.name || "Uncategorized"}
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {course.title}
               </h1>
-              <p className="text-lg text-white/90 max-w-2xl">
+              <p className="text-md md:text-lg text-white/90 max-w-2xl">
                 {course.description}
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 md:min-w-[300px]">
-              <div className="text-3xl font-bold text-white mb-4">
+              <div className="text-2xl font-bold text-white mb-4">
                 {course.price === 0 ? "Free" : `$${course.price}`}
               </div>
               <EnrollButton courseId={course._id} isEnrolled={isEnrolled} />
@@ -83,13 +83,13 @@ export default async function CoursePage({ params }: CoursePageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2">
-            <div className="bg-card rounded-lg p-6 mb-8 border border-border">
+            <div className="bg-card rounded-lg py-6 px-3 mb-8 border border-border">
               <h2 className="text-2xl font-bold mb-4">Course Content</h2>
               <div className="space-y-4">
                 {course.modules?.map((module, index) => (
                   <div
                     key={module._id}
-                    className="border border-border rounded-lg"
+                    className="border border-border rounded-lg text-sm"
                   >
                     <div className="p-4 border-b border-border">
                       <h3 className="font-medium">
