@@ -91,7 +91,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
             </div>
           </Link>
           <div className="space-x-2">
-            <DarkModeToggle />
+            {/* <DarkModeToggle /> */}
 
             <Button
               onClick={close}
