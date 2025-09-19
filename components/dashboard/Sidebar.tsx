@@ -31,7 +31,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import DarkModeToggle from "../DarkModeToggle";
+// import DarkModeToggle from "../DarkModeToggle";
 import { CourseProgress } from "@/components/CourseProgress";
 import { calculateCourseProgress } from "@/lib/courseProgress";
 import "./custom.css"

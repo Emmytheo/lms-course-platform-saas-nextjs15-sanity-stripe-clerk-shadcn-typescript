@@ -4,7 +4,7 @@ import getCourseById from "@/sanity/lib/courses/getCourseById";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { getCourseProgress } from "@/sanity/lib/lessons/getCourseProgress";
 import { checkCourseAccess } from "@/lib/auth";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import DashboardHeader from "@/components/DashboardHeader";
 
 interface CourseLayoutProps {
