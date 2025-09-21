@@ -98,7 +98,7 @@ interface ExamPageProps {
   };
 }
 
-export default async function ExamPage({ params }: ExamPageProps) {
+export default async function ExamPage({ params }: any) {
   await params;
   const exam = await getExamBySlug(params.examId);
 
