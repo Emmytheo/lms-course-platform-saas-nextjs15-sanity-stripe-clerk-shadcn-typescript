@@ -99,8 +99,8 @@ interface ExamPageProps {
 }
 
 export default async function ExamPage({ params }: ExamPageProps) {
-  const { examId } = await params;
-  const exam = await getExamBySlug(examId);
+  await params;
+  const exam = await getExamBySlug(params.examId);
 
   if (!exam) {
     return (
