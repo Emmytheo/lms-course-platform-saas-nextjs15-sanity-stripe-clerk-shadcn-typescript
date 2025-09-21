@@ -6,6 +6,8 @@ import ExamHeader from "./ExamHeader";
 import ExamFooter from "./ExamFooter";
 import { SubmitDialog } from "./SubmitDialog";
 import { ExamResults } from "./ExamResults";
+import { Button } from "@/components/ui/button";
+import { CheckSquare, Square } from "lucide-react";
 
 // Create context for exam state
 const ExamContext = createContext();
@@ -25,6 +27,7 @@ export const ExamLayout = ({ exam, children }) => {
   const [timeRemaining, setTimeRemaining] = useState(exam.duration * 60);
   const [isFinished, setIsFinished] = useState(false);
   const [showConfirmSubmit, setShowConfirmSubmit] = useState(false);
+  const [evalMode, setEvalMode] = useState(false); // New state for evaluation mode
 
   useEffect(() => {
     // Initialize answers object
@@ -52,6 +55,7 @@ export const ExamLayout = ({ exam, children }) => {
   }, [timeRemaining, isFinished]);
 
   const handleAnswerSelect = (answer) => {
+    if (evalMode) return; // Don't allow answer changes in eval mode
     setAnswers((prev) => ({
       ...prev,
       [`${currentSection}-${currentQuestion}`]: answer,
@@ -63,10 +67,6 @@ export const ExamLayout = ({ exam, children }) => {
     setCurrentQuestion(questionIndex);
   };
 
-  const onExit = () => {
-    setIsFinished(false);
-  };
-
   const handleNext = () => {
     const currentSectionQuestions = exam.sections[currentSection].questions;
     if (currentQuestion < currentSectionQuestions.length - 1) {
@@ -74,8 +74,6 @@ export const ExamLayout = ({ exam, children }) => {
     } else if (currentSection < exam.sections.length - 1) {
       setCurrentSection((prev) => prev + 1);
       setCurrentQuestion(0);
-    } else {
-      setShowConfirmSubmit(true);
     }
   };
 
@@ -93,6 +91,24 @@ export const ExamLayout = ({ exam, children }) => {
     setIsFinished(true);
   };
 
+  const onExit = () => {
+    // handleSubmit();
+    setIsFinished(true);
+    setShowConfirmSubmit(false);
+
+  }
+
+  const toggleEvalMode = (evalMode) => {
+    if (!evalMode) return setEvalMode((prev) => !prev);
+    setEvalMode(evalMode);
+  };
+
+  // Get current question data
+  const currentQuestionData =
+    exam.sections[currentSection].questions[currentQuestion];
+  const selectedAnswer = answers[`${currentSection}-${currentQuestion}`];
+  const isCorrect = selectedAnswer === currentQuestionData.correctAnswer;
+
   // Provide exam state to children
   const examState = {
     exam,
@@ -100,14 +116,24 @@ export const ExamLayout = ({ exam, children }) => {
     currentQuestion,
     answers,
     timeRemaining,
+    evalMode,
     handleAnswerSelect,
     handleQuestionSelect,
     handleNext,
     handlePrevious,
+    toggleEvalMode,
   };
 
   if (isFinished) {
-    return <ExamResults exam={exam} answers={answers} onExit={onExit} />;
+    return (
+      <ExamResults
+        exam={exam}
+        answers={answers}
+        onExit={onExit}
+        evalMode={evalMode}
+        toggleEvalMode={toggleEvalMode}
+      />
+    );
   }
 
   return (
@@ -120,6 +146,9 @@ export const ExamLayout = ({ exam, children }) => {
           exam={exam}
           timeRemaining={timeRemaining}
           onShowSubmitDialog={() => setShowConfirmSubmit(true)}
+          evalMode={evalMode}
+          toggleEvalMode={toggleEvalMode}
+          isCorrect={isCorrect}
         />
 
         <div className="flex flex-1 overflow-hidden">
@@ -130,9 +159,11 @@ export const ExamLayout = ({ exam, children }) => {
             answers={answers}
             timeRemaining={timeRemaining}
             onQuestionSelect={handleQuestionSelect}
+            evalMode={evalMode}
+            toggleEvalMode={toggleEvalMode}
           />
 
-          <main className="flex-1 overflow-auto p-6 lg:pl-96">{children}</main>
+          <main className="flex-1 overflow-auto p-6 lg:pl-96 ">{children}</main>
         </div>
 
         <ExamFooter
@@ -143,12 +174,15 @@ export const ExamLayout = ({ exam, children }) => {
           onNext={handleNext}
           onPrevious={handlePrevious}
           onQuestionSelect={handleQuestionSelect}
+          evalMode={evalMode}
         />
 
         <SubmitDialog
           open={showConfirmSubmit}
           onOpenChange={setShowConfirmSubmit}
           onSubmit={handleSubmit}
+          evalMode={evalMode}
+          toggleEvalMode={toggleEvalMode}
         />
       </div>
     </ExamContext.Provider>

@@ -75,7 +75,7 @@ const ExamFooter = ({
                     {section.title}
                   </span>
                   <div className="flex flex-wrap gap-1 justify-center max-w-fit py-1">
-                    {section.questions.map((_, qIndex) => {
+                    {exam.sections[activeSection]?.questions.map((_, qIndex) => {
                       const isAnswered =
                         answers[`${sIndex}-${qIndex}`] !== null;
                       const isCurrent =
@@ -106,7 +106,7 @@ const ExamFooter = ({
 
             {/* Mobile: Show only active section with horizontal scroll */}
             <div className="lg:hidden w-full">
-              <div className="overflow-x-auto pb-2">
+              <div className="overflow-x-auto py-2">
                 <div className="flex gap-2 min-w-max justify-center">
                   {exam.sections[activeSection]?.questions.map((_, qIndex) => {
                     const isAnswered =

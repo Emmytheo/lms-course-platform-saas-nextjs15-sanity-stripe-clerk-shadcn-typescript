@@ -1,9 +1,9 @@
 // components/exam/ExamHeader.js
 import { Button } from '@/components/ui/button';
-import { Clock, AlertCircle } from 'lucide-react';
+import { Clock, AlertCircle, CheckCircle, XCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const ExamHeader = ({ exam, timeRemaining, onShowSubmitDialog }) => {
+const ExamHeader = ({ exam, timeRemaining, onShowSubmitDialog, evalMode, toggleEvalMode, isCorrect }) => {
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -11,9 +11,15 @@ const ExamHeader = ({ exam, timeRemaining, onShowSubmitDialog }) => {
   };
 
   return (
-    <header className="bg-background border-b py-3 px-6 flex justify-between items-center lg:pl-[25rem]">
-      <h1 className="text-xl font-semibold text-foreground whitespace-nowrap truncate ">{exam.title}</h1>
-      <div className="flex items-center gap-4">
+    <header className="bg-background border-b py-4 px-6 flex justify-between items-center lg:pl-[25rem]">
+      <div className="flex items-center gap-2 w-fit truncate">
+        <h1 className="text-xl font-semibold text-foreground whitespace-nowrap truncate">{exam.title}</h1>
+        
+      </div>
+      
+      
+      <div className="flex items-center gap-2">
+        
         <div className={cn(
           "flex items-center gap-2 text-lg font-medium",
           timeRemaining < 300 ? "text-destructive" : "text-foreground"
@@ -21,6 +27,7 @@ const ExamHeader = ({ exam, timeRemaining, onShowSubmitDialog }) => {
           <Clock className="h-5 w-5" />
           <span>{formatTime(timeRemaining)}</span>
         </div>
+        
         <Button
           onClick={onShowSubmitDialog}
           variant="destructive"

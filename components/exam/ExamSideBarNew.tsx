@@ -53,6 +53,8 @@ interface ExamSidebarProps {
   answers: Record<string, number | null>;
   onQuestionSelect: (sectionIndex: number, questionIndex: number) => void;
   timeRemaining: number;
+  evalMode: boolean;
+  toggleEvalMode: () => void;
 }
 
 export function ExamSidebar({
@@ -62,6 +64,8 @@ export function ExamSidebar({
   answers,
   onQuestionSelect,
   timeRemaining,
+  evalMode,
+  toggleEvalMode,
 }: ExamSidebarProps) {
   const pathname = usePathname();
   const { isOpen, toggle, close } = useSidebar();
@@ -106,15 +110,24 @@ export function ExamSidebar({
 
   const getAnswerStatus = (sectionIndex: number, questionIndex: number) => {
     const answer = answers[`${sectionIndex}-${questionIndex}`];
+    if (evalMode) {
+      const isCorrect =
+        answer ===
+        exam.sections[sectionIndex].questions[questionIndex].correctAnswer;
+      return answer !== null
+        ? isCorrect
+          ? "correct"
+          : "incorrect"
+        : "unanswered";
+    }
     return answer !== null ? "answered" : "unanswered";
   };
 
   const SidebarContent = () => (
     <div className="h-full flex flex-col">
-      <div className="p-4 lg:p-6 border-b flex flex-col gap-y-4">
+      <div className="p-4 lg:p-6 border-b flex flex-col gap-y-6">
         <div className="flex items-center justify-between">
-          <div className="flex">
-            
+          <div className="flex mb-2">
             <Link
               href="/exam-library"
               className="items-center gap-x-2 text-sm hover:text-primary transition-colors flex"
@@ -139,7 +152,14 @@ export function ExamSidebar({
         <div className="space-y-4">
           <h1 className="font-semibold text-2xl">{exam.title}</h1>
           <p className="text-sm text-muted-foreground">{exam.description}</p>
-
+          <Button
+            onClick={toggleEvalMode}
+            variant={evalMode ? "default" : "outline"}
+            size="sm"
+            className="gap-2"
+          >
+            {evalMode ? "Exit Evaluation" : "Check Answers"}
+          </Button>
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -201,11 +221,19 @@ export function ExamSidebar({
                     <span className="text-xs text-muted-foreground">
                       Question Navigation
                     </span>
-                    <div className="flex items-center gap-1">
-                      <div className="w-3 h-3 rounded-sm bg-primary"></div>
-                      <div className="w-3 h-3 rounded-sm bg-green-500"></div>
-                      <div className="w-3 h-3 rounded-sm bg-muted"></div>
-                    </div>
+                    {!evalMode ? (
+                      <div className="flex items-center gap-1">
+                        <div className="w-3 h-3 rounded-sm bg-primary"></div>
+                        <div className="w-3 h-3 rounded-sm bg-blue-500"></div>
+                        <div className="w-3 h-3 rounded-sm bg-muted"></div>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-1">
+                        <div className="w-3 h-3 rounded-sm bg-primary"></div>
+                        <div className="w-3 h-3 rounded-sm bg-green-500"></div>
+                        <div className="w-3 h-3 rounded-sm bg-muted"></div>
+                      </div>
+                    )}
                   </div>
 
                   {/* GitHub activity tracker style grid */}
@@ -223,16 +251,32 @@ export function ExamSidebar({
                           <Tooltip>
                             <TooltipTrigger asChild>
                               <button
+                                key={questionIndex}
                                 onClick={() =>
                                   onQuestionSelect(sectionIndex, questionIndex)
                                 }
                                 className={cn(
-                                  "w-full aspect-square rounded-sm flex items-center justify-center text-xs font-medium transition-all",
-                                  isCurrent
+                                  "w-7 h-7 rounded-sm flex items-center justify-center text-xs transition-all",
+                                  "hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+                                  sectionIndex === currentSection &&
+                                    questionIndex === currentQuestion
                                     ? "bg-primary text-primary-foreground shadow-md"
-                                    : isAnswered
+                                    : getAnswerStatus(
+                                          sectionIndex,
+                                          questionIndex
+                                        ) === "correct"
                                       ? "bg-green-500 text-white"
-                                      : "bg-muted text-muted-foreground hover:bg-muted/80"
+                                      : getAnswerStatus(
+                                            sectionIndex,
+                                            questionIndex
+                                          ) === "incorrect"
+                                        ? "bg-red-500 text-white"
+                                        : getAnswerStatus(
+                                              sectionIndex,
+                                              questionIndex
+                                            ) === "answered"
+                                          ? "bg-blue-500 text-white"
+                                          : "bg-muted text-muted-foreground"
                                 )}
                               >
                                 {questionIndex + 1}
@@ -254,18 +298,39 @@ export function ExamSidebar({
                   </div>
 
                   <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-sm bg-primary"></div>
-                      <span>Current</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-sm bg-green-500"></div>
-                      <span>Answered</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-sm bg-muted"></div>
-                      <span>Unanswered</span>
-                    </div>
+                    {!evalMode ? (
+                      // Standard mode legend
+                      <>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-sm bg-primary"></div>
+                          <span>Current</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-sm bg-blue-500"></div>
+                          <span>Answered</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-sm bg-muted"></div>
+                          <span>Unanswered</span>
+                        </div>
+                      </>
+                    ) : (
+                      // Evaluation mode legend
+                      <>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-sm bg-primary"></div>
+                          <span>Current</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-sm bg-green-500"></div>
+                          <span>Correct</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-sm bg-red-500"></div>
+                          <span>Incorrect</span>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </AccordionContent>
               </AccordionItem>

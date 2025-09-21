@@ -117,11 +117,11 @@ export default async function ExamPage({ params }: any) {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="relative h-[63vh] xs:h-[55vh] sm:h-[55vh] md:h-[45vh] w-full">
+      <div className="relative h-[77vh] xs:h-[55vh] sm:h-[55vh] md:h-[45vh] w-full">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-background" />
         <div className="absolute inset-0 container mx-auto px-8 flex flex-col justify-end pb-12">
           <Link
-            href="/exam-library"
+            href={`/cbt`}
             className="text-foreground text-sm md:text-md mb-8 flex items-center hover:text-primary transition-colors w-fit"
           >
             <ArrowLeft className="mr-2 h-5 w-5" />
@@ -182,7 +182,7 @@ export default async function ExamPage({ params }: any) {
                   Breakdown of sections and questions in this exam
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="!px-3 !md:px-6">
                 <div className="space-y-6">
                   {exam.sections.map((section, index) => (
                     <div key={index} className="border rounded-lg p-4">
