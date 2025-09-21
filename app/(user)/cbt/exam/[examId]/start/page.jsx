@@ -8,7 +8,8 @@ async function getExamData (examId = 1) {
 };
 
 export default async function ExamPage({ params }) {
-  const exam = await getExamData(params.examId);
+  const { examId } = await params;
+  const exam = await getExamData(examId);
   
   if (!exam) {
     return <div>Exam not found</div>;
