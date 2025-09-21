@@ -92,8 +92,7 @@ export const ExamLayout = ({ exam, children }) => {
   };
 
   const onExit = () => {
-    // handleSubmit();
-    setIsFinished(true);
+    setIsFinished(false);
     setShowConfirmSubmit(false);
 
   }
