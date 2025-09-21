@@ -1,0 +1,721 @@
+[
+  {
+    "id": 1,
+    "slug": "mathematics-practice-test",
+    "title": "Mathematics Practice Test",
+    "description": "Test your math skills with this comprehensive practice exam covering algebra, geometry, and advanced mathematics concepts.",
+    "duration": 60,
+    "totalQuestions": 30,
+    "categories": ["mathematics", "quantitative"],
+    "difficulty": "Intermediate",
+    "image": "/images/math-exam.jpg",
+    "instructions": [
+      "This exam consists of 30 multiple-choice questions",
+      "You have 60 minutes to complete the exam",
+      "Each question has only one correct answer",
+      "You can navigate between questions using the sidebar or footer",
+      "Once submitted, you cannot change your answers"
+    ],
+    "sections": [
+      {
+        "title": "Algebra",
+        "description": "Linear equations, quadratic formulas, and algebraic expressions",
+        "questions": [
+          {
+            "text": "If 2x + 5 = 15, what is the value of x?",
+            "options": ["5", "10", "7.5", "20"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which of the following is a quadratic equation?",
+            "options": [
+              "y = 2x + 5",
+              "y = x² + 3x - 4",
+              "y = 5",
+              "y = 1/x"
+            ],
+            "correctAnswer": 1
+          },
+          {
+            "text": "Factor completely: x² - 9",
+            "options": [
+              "(x - 3)(x + 3)",
+              "(x - 3)(x - 3)",
+              "(x + 3)(x + 3)",
+              "x(x - 9)"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Solve for y: 3y - 7 = 8",
+            "options": ["y = 5", "y = 3", "y = 7", "y = 15"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the slope of the line y = -2x + 3?",
+            "options": ["-2", "2", "3", "-3"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Simplify: (3x²y³)(4x³y²)",
+            "options": ["12x⁵y⁵", "7x⁵y⁵", "12x⁶y⁶", "7x⁶y⁶"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Solve the system: 2x + y = 5, x - y = 1",
+            "options": ["x=2, y=1", "x=3, y=-1", "x=1, y=3", "x=2, y=3"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the solution to |x - 3| = 7?",
+            "options": ["x=10 or x=-4", "x=4 or x=-10", "x=10", "x=-4"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Factor: x² + 5x + 6",
+            "options": ["(x+2)(x+3)", "(x+1)(x+6)", "(x+2)(x+4)", "(x+3)(x+3)"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Solve: 2(x - 3) + 5 = 3(x + 1)",
+            "options": ["x=-4", "x=4", "x=2", "x=-2"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the vertex of the parabola y = x² - 4x + 3?",
+            "options": ["(2, -1)", "(1, 0)", "(4, 3)", "(-2, 15)"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Simplify: √(16x²)",
+            "options": ["4|x|", "4x", "8x", "16x"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Solve for x: log₂(x) = 3",
+            "options": ["x=8", "x=6", "x=9", "x=4"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the domain of f(x) = √(x-2)?",
+            "options": ["x ≥ 2", "x > 2", "x ≤ 2", "All real numbers"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "If f(x) = 2x + 3 and g(x) = x², what is f(g(2))?",
+            "options": ["11", "7", "10", "14"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "title": "Geometry",
+        "description": "Shapes, angles, areas, and volumes",
+        "questions": [
+          {
+            "text": "What is the area of a circle with radius 5?",
+            "options": ["10π", "25π", "50π", "100π"],
+            "correctAnswer": 1
+          },
+          {
+            "text": "In a right triangle, if the two shorter sides are 3 and 4, what is the length of the hypotenuse?",
+            "options": ["5", "6", "7", "8"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the sum of interior angles in a pentagon?",
+            "options": ["540°", "360°", "720°", "180°"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "If two angles are supplementary and one is 70°, what is the other?",
+            "options": ["110°", "70°", "20°", "290°"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the volume of a cube with side length 4?",
+            "options": ["64", "16", "32", "48"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "How many edges does a rectangular prism have?",
+            "options": ["12", "8", "6", "10"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the circumference of a circle with diameter 10?",
+            "options": ["10π", "20π", "25π", "5π"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "If two triangles are similar and the ratio of their sides is 2:3, what is the ratio of their areas?",
+            "options": ["4:9", "2:3", "1:2", "3:4"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the Pythagorean theorem?",
+            "options": ["a² + b² = c²", "a + b = c", "a × b = c", "a² - b² = c²"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "How many sides does a hexagon have?",
+            "options": ["6", "5", "7", "8"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "title": "Advanced Mathematics",
+        "description": "Calculus and trigonometry problems",
+        "questions": [
+          {
+            "text": "What is the derivative of x³?",
+            "options": ["3x²", "3x", "x⁴/4", "x²"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the integral of 2x?",
+            "options": ["x² + C", "2x² + C", "x + C", "2 + C"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is sin(π/2)?",
+            "options": ["1", "0", "0.5", "√2/2"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the value of lim(x→0) sin(x)/x?",
+            "options": ["1", "0", "∞", "Undefined"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the derivative of sin(x)?",
+            "options": ["cos(x)", "-cos(x)", "-sin(x)", "tan(x)"],
+            "correctAnswer": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "english-language-test",
+    "title": "English Language Test",
+    "description": "Assess your English grammar and comprehension skills with this comprehensive language exam.",
+    "duration": 45,
+    "totalQuestions": 25,
+    "categories": ["english", "language"],
+    "difficulty": "Beginner",
+    "image": "/images/english-exam.jpg",
+    "instructions": [
+      "This exam consists of 25 multiple-choice questions",
+      "You have 45 minutes to complete the exam",
+      "Each question has only one correct answer",
+      "You can navigate between questions using the sidebar or footer",
+      "Once submitted, you cannot change your answers"
+    ],
+    "sections": [
+      {
+        "title": "Grammar",
+        "description": "Sentence structure, tenses, and parts of speech",
+        "questions": [
+          {
+            "text": "Choose the correct sentence:",
+            "options": [
+              "She don't like apples.",
+              "She doesn't like apples.",
+              "She isn't like apples.",
+              "She not like apples."
+            ],
+            "correctAnswer": 1
+          },
+          {
+            "text": "Which sentence is in the past perfect tense?",
+            "options": [
+              "I had finished my work when she called.",
+              "I finished my work when she called.",
+              "I have finished my work when she called.",
+              "I finish my work when she called."
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Identify the adjective: 'The quick brown fox jumps over the lazy dog.'",
+            "options": ["Quick and brown", "Fox and dog", "Jumps and over", "The and the"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Choose the correctly spelled word:",
+            "options": ["Necessary", "Necesary", "Neccessary", "Necesarry"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which is a compound sentence?",
+            "options": [
+              "I wanted to go, but I was too tired.",
+              "Because I was tired, I didn't go.",
+              "Going to the party tired me.",
+              "Tired from the party, I went home."
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Select the correct pronoun: 'Between you and ___ , I think we should go.'",
+            "options": ["me", "I", "myself", "mine"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which sentence uses correct punctuation?",
+            "options": [
+              "She said, 'I'll be there soon.'",
+              "She said 'I'll be there soon.'",
+              "She said, I'll be there soon.",
+              "She said; 'I'll be there soon.'"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Identify the verb: 'The children played in the park.'",
+            "options": ["played", "children", "park", "the"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Choose the correct form: 'There ___ many reasons for this decision.'",
+            "options": ["are", "is", "be", "am"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which is not a preposition?",
+            "options": ["jump", "under", "above", "through"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "title": "Vocabulary",
+        "description": "Word meanings, synonyms, and antonyms",
+        "questions": [
+          {
+            "text": "What is a synonym for 'happy'?",
+            "options": ["Joyful", "Sad", "Angry", "Tired"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the meaning of 'benevolent'?",
+            "options": ["Kind-hearted", "Evil", "Large", "Small"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is an antonym for 'brave'?",
+            "options": ["Cowardly", "Strong", "Fearless", "Heroic"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What does 'ambiguous' mean?",
+            "options": ["Unclear", "Clear", "Happy", "Sad"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is a synonym for 'beautiful'?",
+            "options": ["Gorgeous", "Ugly", "Plain", "Ordinary"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What does 'pragmatic' mean?",
+            "options": ["Practical", "Theoretical", "Idealistic", "Dreamy"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is an antonym for 'generous'?",
+            "options": ["Stingy", "Kind", "Giving", "Charitable"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What does 'eloquent' mean?",
+            "options": ["Fluent and persuasive", "Quiet", "Rude", "Simple"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "title": "Comprehension",
+        "description": "Reading passages and questions",
+        "questions": [
+          {
+            "text": "Read the passage: 'The company decided to implement new policies to improve employee satisfaction. They introduced flexible working hours and remote work options.' What was the company's goal?",
+            "options": [
+              "Improve employee satisfaction",
+              "Increase productivity",
+              "Reduce costs",
+              "Expand to new markets"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Based on the same passage, what changes did the company implement?",
+            "options": [
+              "Flexible working hours and remote work",
+              "Higher salaries and more benefits",
+              "New office location and equipment",
+              "Different management structure"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Read: 'The research indicated that regular exercise not only improves physical health but also enhances mental well-being.' What is the main idea?",
+            "options": [
+              "Exercise benefits both physical and mental health",
+              "Exercise is only good for physical health",
+              "Mental health is more important than physical health",
+              "Research is unnecessary for understanding health"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Based on the same passage, what did the research indicate?",
+            "options": [
+              "Exercise improves physical and mental health",
+              "Exercise is only for young people",
+              "Mental health doesn't matter",
+              "Research is always accurate"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Read: 'The novel explored themes of identity, belonging, and the search for meaning in a rapidly changing world.' What themes did the novel explore?",
+            "options": [
+              "Identity, belonging, and search for meaning",
+              "Love, romance, and relationships",
+              "War, peace, and conflict",
+              "Wealth, poverty, and social class"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What was the setting described in the previous question?",
+            "options": [
+              "A rapidly changing world",
+              "A historical period",
+              "A fantasy realm",
+              "A scientific laboratory"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Read: 'The experiment yielded unexpected results that challenged existing theories and opened new avenues for research.' What did the experiment do?",
+            "options": [
+              "Challenged theories and opened new research avenues",
+              "Confirmed existing theories",
+              "Closed down research possibilities",
+              "Had no significant impact"
+            ],
+            "correctAnswer": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "science-knowledge-assessment",
+    "title": "Science Knowledge Assessment",
+    "description": "Test your knowledge of basic scientific concepts across biology, physics, and chemistry.",
+    "duration": 75,
+    "totalQuestions": 40,
+    "categories": ["science", "biology", "physics", "chemistry"],
+    "difficulty": "Advanced",
+    "image": "/images/science-exam.jpg",
+    "instructions": [
+      "This exam consists of 40 multiple-choice questions",
+      "You have 75 minutes to complete the exam",
+      "Each question has only one correct answer",
+      "You can navigate between questions using the sidebar or footer",
+      "Once submitted, you cannot change your answers"
+    ],
+    "sections": [
+      {
+        "title": "Biology",
+        "description": "Cellular biology, genetics, and ecosystems",
+        "questions": [
+          {
+            "text": "Which organelle is responsible for cellular respiration?",
+            "options": [
+              "Nucleus",
+              "Mitochondria",
+              "Chloroplast",
+              "Ribosome"
+            ],
+            "correctAnswer": 1
+          },
+          {
+            "text": "What is the basic unit of life?",
+            "options": ["Cell", "Atom", "Molecule", "Organ"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which process do plants use to make food?",
+            "options": ["Photosynthesis", "Respiration", "Digestion", "Fermentation"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What does DNA stand for?",
+            "options": [
+              "Deoxyribonucleic Acid",
+              "Dinucleic Acid",
+              "Deoxyribose Acid",
+              "Dinitrogen Acid"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which of these is not part of the cell theory?",
+            "options": [
+              "All cells have a nucleus",
+              "All living things are made of cells",
+              "Cells are the basic unit of life",
+              "Cells come from pre-existing cells"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the function of red blood cells?",
+            "options": [
+              "Carry oxygen",
+              "Fight infection",
+              "Clot blood",
+              "Produce antibodies"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which biome is characterized by permafrost?",
+            "options": ["Tundra", "Desert", "Rainforest", "Grassland"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the primary function of the nervous system?",
+            "options": [
+              "Transmit signals throughout the body",
+              "Pump blood",
+              "Digest food",
+              "Exchange gases"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which of these is a decomposer?",
+            "options": ["Fungus", "Tree", "Rabbit", "Hawk"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What process results in the formation of gametes?",
+            "options": ["Meiosis", "Mitosis", "Photosynthesis", "Respiration"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which blood type is the universal donor?",
+            "options": ["O-", "O+", "AB+", "A-"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the function of the ribosomes?",
+            "options": [
+              "Protein synthesis",
+              "Energy production",
+              "Cellular digestion",
+              "DNA replication"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which kingdom do mushrooms belong to?",
+            "options": ["Fungi", "Plantae", "Animalia", "Protista"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the main component of the cell wall in plants?",
+            "options": ["Cellulose", "Chitin", "Protein", "Lipid"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which process describes the movement of water across a membrane?",
+            "options": ["Osmosis", "Diffusion", "Active transport", "Endocytosis"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "title": "Physics",
+        "description": "Mechanics, energy, electricity, and magnetism",
+        "questions": [
+          {
+            "text": "What is the SI unit of force?",
+            "options": [
+              "Joule",
+              "Newton",
+              "Watt",
+              "Pascal"
+            ],
+            "correctAnswer": 1
+          },
+          {
+            "text": "Which law states that for every action there is an equal and opposite reaction?",
+            "options": [
+              "Newton's First Law",
+              "Newton's Second Law",
+              "Newton's Third Law",
+              "Law of Conservation of Energy"
+            ],
+            "correctAnswer": 2
+          },
+          {
+            "text": "What is the speed of light in a vacuum?",
+            "options": [
+              "3 × 10⁸ m/s",
+              "3 × 10⁵ m/s",
+              "3 × 10¹⁰ m/s",
+              "3 × 10³ m/s"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which of these is a vector quantity?",
+            "options": ["Velocity", "Speed", "Mass", "Temperature"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the formula for kinetic energy?",
+            "options": ["½mv²", "mgh", "Fd", "ma"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which material is the best conductor of electricity?",
+            "options": ["Silver", "Copper", "Iron", "Aluminum"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What does E=mc² represent?",
+            "options": [
+              "Mass-energy equivalence",
+              "Kinetic energy",
+              "Potential energy",
+              "Thermal energy"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which type of lens converges light?",
+            "options": ["Convex", "Concave", "Plano-concave", "Diverging"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the unit of electrical resistance?",
+            "options": ["Ohm", "Volt", "Ampere", "Watt"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which law states that pressure and volume are inversely proportional at constant temperature?",
+            "options": [
+              "Boyle's Law",
+              "Charles's Law",
+              "Gay-Lussac's Law",
+              "Avogadro's Law"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the acceleration due to gravity on Earth?",
+            "options": ["9.8 m/s²", "8.9 m/s²", "10 m/s²", "7.6 m/s²"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which subatomic particle has a negative charge?",
+            "options": ["Electron", "Proton", "Neutron", "Photon"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the principle behind a nuclear power plant?",
+            "options": [
+              "Nuclear fission",
+              "Nuclear fusion",
+              "Chemical reaction",
+              "Solar energy"
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which electromagnetic waves have the highest frequency?",
+            "options": ["Gamma rays", "Radio waves", "Microwaves", "Visible light"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the law of conservation of energy?",
+            "options": [
+              "Energy cannot be created or destroyed",
+              "Energy increases over time",
+              "Energy decreases over time",
+              "Energy can be created but not destroyed"
+            ],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "title": "Chemistry",
+        "description": "Elements, compounds, reactions, and periodic table",
+        "questions": [
+          {
+            "text": "What is the atomic number of carbon?",
+            "options": ["6", "12", "14", "8"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which of these is a noble gas?",
+            "options": ["Helium", "Oxygen", "Nitrogen", "Chlorine"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the pH of pure water?",
+            "options": ["7", "0", "14", "1"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which process describes a liquid turning into a gas?",
+            "options": ["Evaporation", "Condensation", "Sublimation", "Freezing"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the chemical formula for table salt?",
+            "options": ["NaCl", "H₂O", "CO₂", "C₆H₁₂O₆"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which element is the most abundant in the Earth's atmosphere?",
+            "options": ["Nitrogen", "Oxygen", "Carbon dioxide", "Argon"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What type of bond involves the sharing of electrons?",
+            "options": ["Covalent", "Ionic", "Metallic", "Hydrogen"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which of these is an acid?",
+            "options": ["HCl", "NaOH", "NaCl", "NH₃"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "What is the smallest unit of an element that retains its properties?",
+            "options": ["Atom", "Molecule", "Cell", "Electron"],
+            "correctAnswer": 0
+          },
+          {
+            "text": "Which subatomic particle determines the element?",
+            "options": ["Proton", "Neutron", "Electron", "Photon"],
+            "correctAnswer": 0
+          }
+        ]
+      }
+    ]
+  }
+]
