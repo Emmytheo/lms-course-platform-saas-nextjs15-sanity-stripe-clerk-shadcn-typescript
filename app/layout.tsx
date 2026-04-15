@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { PaletteProvider } from "@/context/palette-context";
+import { Toaster } from "@/components/ui/sonner";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
@@ -44,7 +46,10 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <PaletteProvider>
+            {children}
+            <Toaster />
+          </PaletteProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -32,6 +32,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 // import DarkModeToggle from "../DarkModeToggle";
+import { ThemeCustomizer } from "@/components/theme-customizer";
 import { CourseProgress } from "@/components/CourseProgress";
 import { calculateCourseProgress } from "@/lib/courseProgress";
 import "./custom.css"
@@ -84,14 +85,14 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
             href="/my-courses"
             className="items-center gap-x-2 text-sm hover:text-primary transition-colors flex"
           >
-            <ArrowLeft className="h-4 w-4 hidden md:flex"/>
+            <ArrowLeft className="h-4 w-4 hidden md:flex" />
             <div className="flex items-center gap-x-2">
               <Library className="h-4 w-4 hidden md:flex" />
               <span>Course Library</span>
             </div>
           </Link>
-          <div className="space-x-2">
-            {/* <DarkModeToggle /> */}
+          <div className="flex items-center gap-2">
+            <ThemeCustomizer />
 
             <Button
               onClick={close}
@@ -170,7 +171,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
                             {String(lessonIndex + 1).padStart(2, "0")}
                           </span>
                           {isCompleted ? (
-                            <Check className="h-4 w-4 shrink-0 text-green-500" />
+                            <Check className="h-4 w-4 shrink-0 text-primary" />
                           ) : (
                             <PlayCircle
                               className={cn(
@@ -185,7 +186,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
                             className={cn(
                               "text-sm line-clamp-2 min-w-0",
                               isCompleted &&
-                                "text-muted-foreground line-through decoration-green-500/50"
+                              "text-muted-foreground line-through decoration-primary/50"
                             )}
                           >
                             {lesson.title}

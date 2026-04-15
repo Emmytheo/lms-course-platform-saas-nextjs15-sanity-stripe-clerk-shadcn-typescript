@@ -34,7 +34,16 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -60,6 +69,186 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* --- NATURE PALETTE --- */
+  /* Deep Green, Orange-ish Yellow, Red */
+  [data-palette="nature"] {
+    --primary: 142 70% 29%;
+    /* Deep Green */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 32 95% 44%;
+    /* Deep Orange/Yellow (Autumn) */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 142 30% 90%;
+    /* Light Green tint */
+    --accent-foreground: 142 70% 29%;
+    --destructive: 0 84% 60%;
+    /* Red */
+    --destructive-foreground: 0 0% 98%;
+    --ring: 142 70% 29%;
+  }
+
+  [data-palette="nature"].dark {
+    --primary: 142 60% 45%;
+    /* Lighter/Vibrant Green on Dark */
+    --primary-foreground: 0 0% 10%;
+    --secondary: 32 95% 44%;
+    /* Orange pop */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 142 30% 20%;
+    /* Dark Green tint */
+    --accent-foreground: 142 60% 45%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 142 60% 45%;
+  }
+
+  /* --- ELECTRIC PALETTE --- */
+  /* Electric Blue, Black/Dark Backgrounds */
+  [data-palette="electric"] {
+    --primary: 217 91% 60%;
+    /* Electric Blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 190 90% 50%;
+    /* Cyan accent */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 217 50% 95%;
+    /* Very light blue */
+    --accent-foreground: 217 91% 60%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 217 91% 60%;
+  }
+
+  [data-palette="electric"].dark {
+    --primary: 217 91% 60%;
+    /* Electric Blue */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 190 90% 50%;
+    /* Cyan */
+    --secondary-foreground: 0 0% 0%;
+    --accent: 217 50% 15%;
+    /* Dark Blue tint */
+    --accent-foreground: 217 91% 60%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 217 91% 60%;
+    /* Optional deeply saturated background could go here if requested, 
+       but standard dark theme fits "Electric Blue on Black" perfectly. */
+  }
+
+  /* --- OCEAN PALETTE --- */
+  /* Deep Blue, Teal, Calming */
+  [data-palette="ocean"] {
+    --primary: 199 89% 48%;
+    /* Cerulean */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 172 66% 50%;
+    /* Teal/Turquoise */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 199 50% 96%;
+    --accent-foreground: 199 89% 48%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 199 89% 48%;
+  }
+
+  [data-palette="ocean"].dark {
+    --primary: 199 89% 58%;
+    /* Brighter Blue */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 172 66% 50%;
+    --secondary-foreground: 0 0% 0%;
+    --accent: 199 50% 15%;
+    --accent-foreground: 199 89% 58%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 199 89% 58%;
+  }
+
+  /* --- SUNSET PALETTE --- */
+  /* Warm Pinks, Purples, Oranges */
+  [data-palette="sunset"] {
+    --primary: 262 83% 58%;
+    /* Purple */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 340 82% 52%;
+    /* Pink/Magenta */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 262 50% 96%;
+    --accent-foreground: 262 83% 58%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 262 83% 58%;
+  }
+
+  [data-palette="sunset"].dark {
+    --primary: 262 83% 68%;
+    /* Lighter Purple */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 340 82% 62%;
+    /* Hot Pink */
+    --secondary-foreground: 0 0% 0%;
+    --accent: 262 50% 15%;
+    --accent-foreground: 262 83% 68%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 262 83% 68%;
+  }
+
+  /* --- MIDNIGHT & GOLD PALETTE --- */
+  /* Deep Midnight blue-black, Gold accents */
+  [data-palette="midnight"] {
+    --background: 222 47% 4%;
+    --foreground: 48 80% 90%;
+    --card: 222 47% 3%;
+    --card-foreground: 48 80% 90%;
+    --popover: 222 47% 4%;
+    --popover-foreground: 48 80% 90%;
+    --primary: 45 93% 47%; /* Gold */
+    --primary-foreground: 222 47% 4%;
+    --secondary: 45 40% 15%;
+    --secondary-foreground: 45 93% 47%;
+    --muted: 222 30% 10%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 222 47% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 30% 15%;
+    --input: 217 30% 15%;
+    --ring: 45 93% 47%;
+  }
+
+  [data-palette="midnight"].dark {
+    --background: 222 47% 4%;
+    --foreground: 48 80% 90%;
+    --card: 222 47% 3%;
+    --card-foreground: 48 80% 90%;
+    --popover: 222 47% 4%;
+    --popover-foreground: 48 80% 90%;
+    --primary: 48 95% 50%; /* Brighter Gold */
+    --primary-foreground: 222 47% 4%;
+    --secondary: 222 47% 10%;
+    --secondary-foreground: 48 95% 50%;
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 25% 70%;
+    --accent: 48 95% 50%;
+    --accent-foreground: 222 47% 4%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 48 80% 90%;
+    --border: 217 30% 18%;
+    --input: 217 30% 18%;
+    --ring: 48 95% 50%;
   }
 }
 
@@ -67,6 +256,7 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

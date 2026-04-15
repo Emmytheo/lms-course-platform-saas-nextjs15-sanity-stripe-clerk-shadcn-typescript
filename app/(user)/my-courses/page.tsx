@@ -1,4 +1,4 @@
-import { currentUser } from "@clerk/nextjs/server";
+import { getAuth } from "@/lib/auth-wrapper";
 import { redirect } from "next/navigation";
 import { getEnrolledCourses } from "@/sanity/lib/student/getEnrolledCourses";
 import Link from "next/link";
@@ -7,21 +7,29 @@ import { getCourseProgress } from "@/sanity/lib/lessons/getCourseProgress";
 import { CourseCard } from "@/components/CourseCard";
 
 export default async function MyCoursesPage() {
-  const user = await currentUser();
+  const { userId } = await getAuth();
 
-  if (!user?.id) {
+  if (!userId) {
     return redirect("/");
   }
 
-  const enrolledCourses = await getEnrolledCourses(user.id);
+  const enrolledCourses = await getEnrolledCourses(userId);
 
   // Get progress for each enrolled course
   const coursesWithProgress = await Promise.all(
     enrolledCourses.map(async ({ course }) => {
       if (!course) return null;
-      const progress = await getCourseProgress(user.id, course._id);
+      const progress = await getCourseProgress(userId, course._id);
+      
+      // Map Sanity data to the expected Course interface
+      const mappedCourse = {
+        ...course,
+        title: course.title || "Untitled Course",
+        slug: typeof course.slug === 'string' ? { current: course.slug } : course.slug,
+      } as any;
+
       return {
-        course,
+        course: mappedCourse,
         progress: progress.courseProgress,
       };
     })

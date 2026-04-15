@@ -1,0 +1,292 @@
+{
+  "sections": [
+    {
+      "title": "Biology",
+      "description": "Cellular biology, genetics, and ecosystems",
+      "questions": [
+        {
+          "text": "Which organelle is responsible for cellular respiration?",
+          "options": ["Nucleus", "Mitochondria", "Chloroplast", "Ribosome"],
+          "correctAnswer": 1
+        },
+        {
+          "text": "What is the basic unit of life?",
+          "options": ["Cell", "Atom", "Molecule", "Organ"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which process do plants use to make food?",
+          "options": [
+            "Photosynthesis",
+            "Respiration",
+            "Digestion",
+            "Fermentation"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What does DNA stand for?",
+          "options": [
+            "Deoxyribonucleic Acid",
+            "Dinucleic Acid",
+            "Deoxyribose Acid",
+            "Dinitrogen Acid"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which of these is not part of the cell theory?",
+          "options": [
+            "All cells have a nucleus",
+            "All living things are made of cells",
+            "Cells are the basic unit of life",
+            "Cells come from pre-existing cells"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the function of red blood cells?",
+          "options": [
+            "Carry oxygen",
+            "Fight infection",
+            "Clot blood",
+            "Produce antibodies"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which biome is characterized by permafrost?",
+          "options": ["Tundra", "Desert", "Rainforest", "Grassland"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the primary function of the nervous system?",
+          "options": [
+            "Transmit signals throughout the body",
+            "Pump blood",
+            "Digest food",
+            "Exchange gases"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which of these is a decomposer?",
+          "options": ["Fungus", "Tree", "Rabbit", "Hawk"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What process results in the formation of gametes?",
+          "options": ["Meiosis", "Mitosis", "Photosynthesis", "Respiration"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which blood type is the universal donor?",
+          "options": ["O-", "O+", "AB+", "A-"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the function of the ribosomes?",
+          "options": [
+            "Protein synthesis",
+            "Energy production",
+            "Cellular digestion",
+            "DNA replication"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which kingdom do mushrooms belong to?",
+          "options": ["Fungi", "Plantae", "Animalia", "Protista"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the main component of the cell wall in plants?",
+          "options": ["Cellulose", "Chitin", "Protein", "Lipid"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which process describes the movement of water across a membrane?",
+          "options": [
+            "Osmosis",
+            "Diffusion",
+            "Active transport",
+            "Endocytosis"
+          ],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "title": "Physics",
+      "description": "Mechanics, energy, electricity, and magnetism",
+      "questions": [
+        {
+          "text": "What is the SI unit of force?",
+          "options": ["Joule", "Newton", "Watt", "Pascal"],
+          "correctAnswer": 1
+        },
+        {
+          "text": "Which law states that for every action there is an equal and opposite reaction?",
+          "options": [
+            "Newton's First Law",
+            "Newton's Second Law",
+            "Newton's Third Law",
+            "Law of Conservation of Energy"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "text": "What is the speed of light in a vacuum?",
+          "options": [
+            "3 × 10⁸ m/s",
+            "3 × 10⁵ m/s",
+            "3 × 10¹⁰ m/s",
+            "3 × 10³ m/s"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which of these is a vector quantity?",
+          "options": ["Velocity", "Speed", "Mass", "Temperature"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the formula for kinetic energy?",
+          "options": ["½mv²", "mgh", "Fd", "ma"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which material is the best conductor of electricity?",
+          "options": ["Silver", "Copper", "Iron", "Aluminum"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What does E=mc² represent?",
+          "options": [
+            "Mass-energy equivalence",
+            "Kinetic energy",
+            "Potential energy",
+            "Thermal energy"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which type of lens converges light?",
+          "options": ["Convex", "Concave", "Plano-concave", "Diverging"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the unit of electrical resistance?",
+          "options": ["Ohm", "Volt", "Ampere", "Watt"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which law states that pressure and volume are inversely proportional at constant temperature?",
+          "options": [
+            "Boyle's Law",
+            "Charles's Law",
+            "Gay-Lussac's Law",
+            "Avogadro's Law"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the acceleration due to gravity on Earth?",
+          "options": ["9.8 m/s²", "8.9 m/s²", "10 m/s²", "7.6 m/s²"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which subatomic particle has a negative charge?",
+          "options": ["Electron", "Proton", "Neutron", "Photon"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the principle behind a nuclear power plant?",
+          "options": [
+            "Nuclear fission",
+            "Nuclear fusion",
+            "Chemical reaction",
+            "Solar energy"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which electromagnetic waves have the highest frequency?",
+          "options": [
+            "Gamma rays",
+            "Radio waves",
+            "Microwaves",
+            "Visible light"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the law of conservation of energy?",
+          "options": [
+            "Energy cannot be created or destroyed",
+            "Energy increases over time",
+            "Energy decreases over time",
+            "Energy can be created but not destroyed"
+          ],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "title": "Chemistry",
+      "description": "Elements, compounds, reactions, and periodic table",
+      "questions": [
+        {
+          "text": "What is the atomic number of carbon?",
+          "options": ["6", "12", "14", "8"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which of these is a noble gas?",
+          "options": ["Helium", "Oxygen", "Nitrogen", "Chlorine"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the pH of pure water?",
+          "options": ["7", "0", "14", "1"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which process describes a liquid turning into a gas?",
+          "options": ["Evaporation", "Condensation", "Sublimation", "Freezing"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the chemical formula for table salt?",
+          "options": ["NaCl", "H₂O", "CO₂", "C₆H₁₂O₆"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which element is the most abundant in the Earth's atmosphere?",
+          "options": ["Nitrogen", "Oxygen", "Carbon dioxide", "Argon"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What type of bond involves the sharing of electrons?",
+          "options": ["Covalent", "Ionic", "Metallic", "Hydrogen"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which of these is an acid?",
+          "options": ["HCl", "NaOH", "NaCl", "NH₃"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "What is the smallest unit of an element that retains its properties?",
+          "options": ["Atom", "Molecule", "Cell", "Electron"],
+          "correctAnswer": 0
+        },
+        {
+          "text": "Which subatomic particle determines the element?",
+          "options": ["Proton", "Neutron", "Electron", "Photon"],
+          "correctAnswer": 0
+        }
+      ]
+    }
+  ]
+}

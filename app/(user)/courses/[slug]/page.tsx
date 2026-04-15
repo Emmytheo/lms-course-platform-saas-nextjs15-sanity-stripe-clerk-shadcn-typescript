@@ -2,10 +2,10 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, BookOpen } from "lucide-react";
-import EnrollButton from "@/components/EnrollButton";
+import { EnrollButton } from "@/components/EnrollButton";
 import getCourseBySlug from "@/sanity/lib/courses/getCourseBySlug";
 import { isEnrolledInCourse } from "@/sanity/lib/student/isEnrolledInCourse";
-import { auth } from "@clerk/nextjs/server";
+import { getAuth } from "@/lib/auth-wrapper";
 
 interface CoursePageProps {
   params: Promise<{
@@ -16,7 +16,7 @@ interface CoursePageProps {
 export default async function CoursePage({ params }: CoursePageProps) {
   const { slug } = await params;
   const course = await getCourseBySlug(slug);
-  const { userId } = await auth();
+  const { userId } = await getAuth();
 
   const isEnrolled =
     userId && course?._id
@@ -34,7 +34,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="relative h-[63vh] xs:h-[55vh] sm:h-[55vh] md:h-[45vh] w-full">
+      <div className="relative h-fit w-full">
         {course.image && (
           <Image
             src={urlFor(course.image).url() || ""}
@@ -45,7 +45,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black to-black/60" />
-        <div className="absolute inset-0 container mx-auto px-8 flex flex-col justify-end pb-12">
+        <div className="relative inset-0 container mx-auto p-8 md:p-16 flex flex-col justify-end pb-12">
           <Link
             href="/"
             prefetch={false}
@@ -72,7 +72,14 @@ export default async function CoursePage({ params }: CoursePageProps) {
               <div className="text-2xl font-bold text-white mb-4">
                 {course.price === 0 ? "Free" : `$${course.price}`}
               </div>
-              <EnrollButton courseId={course._id} isEnrolled={isEnrolled} />
+              <EnrollButton
+                itemId={course._id}
+                itemType="course"
+                title={course.title}
+                description={course.description ? course.description.substring(0, 100) : ""}
+                price={course.price}
+                isEnrolled={isEnrolled}
+              />
             </div>
           </div>
         </div>

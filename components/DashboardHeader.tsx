@@ -1,11 +1,9 @@
 "use client";
 
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { BookMarkedIcon, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { SearchInput } from "./SearchInput";
-import { Button } from "./ui/button";
-import DarkModeToggle from "./DarkModeToggle";
+import { ThemeUserButton } from "./ThemeUserButton";
 
 export default function DashboardHeader() {
   return (
@@ -20,7 +18,7 @@ export default function DashboardHeader() {
             >
               <BookOpen className="h-6 w-6 text-primary" />
               <span className="text-xl font-bold bg-gradient-to-r from-primary/90 to-primary bg-clip-text text-transparent">
-                LearnR
+                SkillHub
               </span>
             </Link>
 
@@ -33,27 +31,14 @@ export default function DashboardHeader() {
             <nav>
               <Link
                 prefetch={false}
-                href="/my-courses"
+                href="/lms/student/me"
                 className="flex space-x-2 items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors md:border md:border-border md:rounded-md md:px-4 md:py-2"
               >
                 <BookMarkedIcon className="h-4 w-4" />
                 <span className="hidden md:block">My Courses</span>
               </Link>
             </nav>
-
-            <DarkModeToggle />
-
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-
-            <SignedOut>
-              <SignInButton mode="modal">
-                <Button variant="outline" size="default">
-                  Sign In
-                </Button>
-              </SignInButton>
-            </SignedOut>
+            <ThemeUserButton />
           </div>
         </div>
       </div>

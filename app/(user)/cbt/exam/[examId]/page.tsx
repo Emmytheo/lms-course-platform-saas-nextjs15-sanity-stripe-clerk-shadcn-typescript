@@ -1,308 +1,235 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Clock, HelpCircle, BarChart3, BookOpen } from "lucide-react";
+import { ArrowLeft, Clock, HelpCircle, BarChart3, BookOpen, Shield, Award, CheckCircle, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import exams from "@/public/data/exam.json"
+import { db } from "@/lib/db";
+import { getAuth } from "@/lib/auth-wrapper";
+import { notFound } from "next/navigation";
 
-// Mock function to fetch exam data - replace with your actual data fetching
-async function getExamBySlug(examId: number) {
-  // This would typically fetch from your database
-  // const exams = [
-  //   {
-  //     id: 1,
-  //     slug: "mathematics-practice-test",
-  //     title: "Mathematics Practice Test",
-  //     description: "Test your math skills with this comprehensive practice exam covering algebra, geometry, and advanced mathematics concepts.",
-  //     duration: 60,
-  //     totalQuestions: 30,
-  //     categories: ["mathematics", "quantitative"],
-  //     difficulty: "Intermediate",
-  //     image: "/images/math-exam.jpg",
-  //     sections: [
-  //       {
-  //         title: "Algebra",
-  //         questions: 15,
-  //         description: "Linear equations, quadratic formulas, and algebraic expressions"
-  //       },
-  //       {
-  //         title: "Geometry",
-  //         questions: 10,
-  //         description: "Shapes, angles, areas, and volumes"
-  //       },
-  //       {
-  //         title: "Advanced Mathematics",
-  //         questions: 5,
-  //         description: "Calculus and trigonometry problems"
-  //       }
-  //     ],
-  //     instructions: [
-  //       "This exam consists of 30 multiple-choice questions",
-  //       "You have 60 minutes to complete the exam",
-  //       "Each question has only one correct answer",
-  //       "You can navigate between questions using the sidebar or footer",
-  //       "Once submitted, you cannot change your answers"
-  //     ]
-  //   },
-  //   {
-  //     id: 2,
-  //     slug: "english-language-test",
-  //     title: "English Language Test",
-  //     description: "Assess your English grammar and comprehension skills with this comprehensive language exam.",
-  //     duration: 45,
-  //     totalQuestions: 25,
-  //     categories: ["english", "language"],
-  //     difficulty: "Beginner",
-  //     image: "/images/english-exam.jpg",
-  //     sections: [
-  //       {
-  //         title: "Grammar",
-  //         questions: 10,
-  //         description: "Sentence structure, tenses, and parts of speech"
-  //       },
-  //       {
-  //         title: "Vocabulary",
-  //         questions: 8,
-  //         description: "Word meanings, synonyms, and antonyms"
-  //       },
-  //       {
-  //         title: "Comprehension",
-  //         questions: 7,
-  //         description: "Reading passages and questions"
-  //       }
-  //     ],
-  //     instructions: [
-  //       "This exam consists of 25 multiple-choice questions",
-  //       "You have 45 minutes to complete the exam",
-  //       "Each question has only one correct answer",
-  //       "You can navigate between questions using the sidebar or footer",
-  //       "Once submitted, you cannot change your answers"
-  //     ]
-  //   }
-  // ];
+export const dynamic = 'force-dynamic';
 
-  
-  
-  return exams.find(exam => {
-    console.log(examId, exam.id, exam.id == examId);
-    return exam.id == examId
-  });
-}
+export default async function ExamPage({ params }: { params: Promise<{ examId: string }> }) {
+  const { examId } = await params;
+  const { userId } = await getAuth();
 
-interface ExamPageProps {
-  params: {
-    slug: string;
-    examId: number;
-  };
-}
-
-export default async function ExamPage({ params }: any) {
-  await params;
-  const exam = await getExamBySlug(params.examId);
+  const exam = await db.getExamById(examId);
 
   if (!exam) {
-    return (
-      <div className="container mx-auto px-4 py-8 mt-16">
-        <h1 className="text-4xl font-bold">Exam not found</h1>
-        <Link href="/exam-library" className="text-primary mt-4 inline-flex items-center">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to Exam Library
-        </Link>
-      </div>
-    );
+    return notFound();
   }
 
+  const sections = typeof exam.sections === 'string' ? JSON.parse(exam.sections) : (exam.sections || []);
+  const totalQuestions = sections.length > 0
+    ? sections.reduce((acc: number, s: any) => acc + (s.questions?.length || 0), 0)
+    : (exam.questions?.length || 0);
+  
+  const instructions = exam.instructions || [
+    "Read each question carefully before selecting an answer.",
+    "Manage your time effectively using the sidebar navigation.",
+    "Submit your exam only after reviewing all questions.",
+    "Results and analytics will be available immediately after submission."
+  ];
+
+  const tags = typeof exam.tags === 'string' ? JSON.parse(exam.tags) : (exam.tags || []);
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <div className="relative h-[77vh] xs:h-[55vh] sm:h-[55vh] md:h-[45vh] w-full">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-background" />
-        <div className="absolute inset-0 container mx-auto px-8 flex flex-col justify-end pb-12">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-primary/30">
+      {/* Premium Hero Section */}
+      <div className="relative overflow-hidden border-b border-white/10">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-black to-black z-0" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-50 blur-3xl z-0" />
+        
+        <div className="relative z-10 container mx-auto px-6 py-20 lg:py-32">
           <Link
-            href={`/cbt`}
-            className="text-foreground text-sm md:text-md mb-8 flex items-center hover:text-primary transition-colors w-fit"
+            href="/cbt"
+            className="group inline-flex items-center text-sm font-bold text-muted-foreground hover:text-white transition-all mb-12 bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:border-primary/50"
           >
-            <ArrowLeft className="mr-2 h-5 w-5" />
-            Back to Exam Library
+            <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            Back to Practice Library
           </Link>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-              <div className="flex items-center gap-2 mb-4 flex-wrap">
-                <Badge variant="secondary" className="text-sm font-medium">
-                  {exam.difficulty}
+
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
+            <div className="max-w-4xl space-y-6">
+              <div className="flex items-center gap-3 animate-in fade-in slide-in-from-left-4 duration-700">
+                <Badge className="bg-primary/20 text-primary border-primary/50 px-3 py-1 font-black tracking-widest uppercase text-[10px]">
+                  CBT Practice Exam
                 </Badge>
-                {exam.categories.map((category, index) => (
-                  <Badge key={index} variant="outline" className="text-sm font-medium">
-                    {category}
+                {exam.difficulty && (
+                  <Badge variant="outline" className="border-white/20 text-white/70 px-3 py-1 uppercase text-[10px] tracking-widest font-black">
+                    {exam.difficulty}
                   </Badge>
-                ))}
+                )}
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              
+              <h1 className="text-4xl md:text-7xl font-black tracking-tighter leading-[0.9] animate-in fade-in slide-in-from-left-6 duration-1000">
                 {exam.title}
               </h1>
-              <p className="text-md md:text-lg text-muted-foreground max-w-2xl">
+              
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl animate-in fade-in slide-in-from-left-8 duration-1000 delay-200">
                 {exam.description}
               </p>
-            </div>
-            <div className="bg-card/50 backdrop-blur-sm rounded-lg p-6 md:min-w-[300px] border">
-              <div className="flex items-center justify-between mb-6">
+
+              <div className="flex flex-wrap gap-6 pt-4 text-sm font-bold tracking-wider uppercase text-muted-foreground animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500">
                 <div className="flex items-center gap-2">
                   <Clock className="h-5 w-5 text-primary" />
-                  <span className="font-medium">Duration</span>
+                  <span>{exam.duration_minutes} Mins</span>
                 </div>
-                <span className="text-lg font-bold">{exam.duration} minutes</span>
-              </div>
-              <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
                   <HelpCircle className="h-5 w-5 text-primary" />
-                  <span className="font-medium">Questions</span>
+                  <span>{totalQuestions} Questions</span>
                 </div>
-                <span className="text-lg font-bold">{exam.totalQuestions}</span>
+                <div className="flex items-center gap-2">
+                  <Shield className="h-5 w-5 text-primary" />
+                  <span>{exam.pass_score}% Pass Score</span>
+                </div>
               </div>
-              <Button asChild className="w-full">
-                <Link href={`/cbt/exam/${exam.id}/start`}>Start Exam</Link>
-              </Button>
+            </div>
+
+            <div className="lg:min-w-[400px] animate-in fade-in zoom-in duration-1000 delay-700">
+              <Card className="bg-white/5 backdrop-blur-xl border-white/10 shadow-2xl rounded-3xl overflow-hidden p-8">
+                <div className="text-center mb-8">
+                    <span className="block text-primary text-xs font-black tracking-widest uppercase mb-2">Access Status</span>
+                    <span className="text-4xl font-black text-white italic">FREE <span className="text-primary">ACCESS</span></span>
+                </div>
+                
+                <Button asChild className="w-full h-16 text-lg font-black tracking-widest uppercase rounded-2xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" size="lg">
+                  <Link href={`/cbt/exam/${examId}/start`}>
+                    <Zap className="mr-2 h-5 w-5 fill-current" />
+                    Launch Exam Center
+                  </Link>
+                </Button>
+                
+                <p className="text-[10px] text-center text-muted-foreground mt-4 font-bold uppercase tracking-widest opacity-50">
+                  Simulated environment &bull; Instant Analytics
+                </p>
+              </Card>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Content Section */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-8">
-            {/* Exam Sections */}
-            <Card className="border shadow-sm rounded-lg">
-              <CardHeader className="!pb-4">
-                <CardTitle>Exam Structure</CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Breakdown of sections and questions in this exam
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="!px-3 !md:px-6">
-                <div className="space-y-6">
-                  {exam.sections.map((section, index) => (
-                    <div key={index} className="border rounded-lg p-4">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="font-medium text-lg">
-                          Section {index + 1}: {section.title}
-                        </h3>
-                        <Badge variant="outline" className="whitespace-nowrap">
-                          {section.questions.length} questions
-                        </Badge>
-                      </div>
-                      <p className="text-muted-foreground text-sm">
-                        {section.description}
-                      </p>
-                      <Progress value={(section.questions.length / exam.totalQuestions) * 100} className="mt-4" />
-                    </div>
-                  ))}
+      {/* Main Content Areas */}
+      <div className="container mx-auto px-6 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div className="lg:col-span-2 space-y-12">
+            {/* Sections */}
+            {sections.length > 0 && (
+              <section className="space-y-6">
+                <h2 className="text-2xl font-black tracking-tighter uppercase flex items-center gap-3">
+                    <BarChart3 className="w-6 h-6 text-primary" />
+                    Exam Blueprint
+                </h2>
+                <div className="grid gap-6">
+                  {sections.map((section: any, idx: number) => {
+                    const weight = totalQuestions > 0 ? Math.round((section.questions?.length / totalQuestions) * 100) : 0;
+                    return (
+                        <div key={idx} className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300">
+                            <div className="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 className="text-xl font-black text-white group-hover:text-primary transition-colors">{section.title}</h3>
+                                    <p className="text-sm text-muted-foreground mt-1 lowercase first-letter:uppercase">{section.description}</p>
+                                </div>
+                                <Badge variant="outline" className="border-white/10 text-white/50">{section.questions?.length} Qs</Badge>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex justify-between text-[10px] font-black uppercase tracking-widest text-muted-foreground">
+                                    <span>Section Weight</span>
+                                    <span>{weight}%</span>
+                                </div>
+                                <Progress value={weight} className="h-1 bg-white/10" indicatorClassName="bg-primary" />
+                            </div>
+                        </div>
+                    );
+                  })}
                 </div>
-              </CardContent>
-            </Card>
+              </section>
+            )}
 
             {/* Instructions */}
-            <Card className="border shadow-sm rounded-lg">
-              <CardHeader>
-                <CardTitle>Exam Instructions</CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Please read these instructions carefully before starting the exam
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {exam.instructions.map((instruction, index) => (
-                    <li key={index} className="flex items-start">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium text-xs mt-0.5 mr-3">
-                        {index + 1}
-                      </div>
-                      <span className="text-foreground">{instruction}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+            <section className="space-y-6">
+                <h2 className="text-2xl font-black tracking-tighter uppercase flex items-center gap-3">
+                    <ListIcon className="w-6 h-6 text-primary" />
+                    Rules of Engagement
+                </h2>
+                <Card className="bg-white/5 border-white/10 rounded-2xl overflow-hidden p-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {instructions.map((inst, i) => (
+                            <div key={i} className="flex gap-4">
+                                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 text-primary border border-primary/50 flex items-center justify-center text-xs font-black">
+                                    {i + 1}
+                                </div>
+                                <p className="text-sm text-gray-400 leading-relaxed pt-1.5">{inst}</p>
+                            </div>
+                        ))}
+                    </div>
+                </Card>
+            </section>
           </div>
 
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Stats Card */}
-            <Card className="border shadow-sm rounded-lg">
-              <CardHeader>
-                <CardTitle>Exam Stats</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <BarChart3 className="h-5 w-5 text-muted-foreground" />
-                    <span className="text-sm">Avg. Score</span>
-                  </div>
-                  <span className="font-medium">72%</span>
+          <div className="space-y-8">
+            {/* Tag Cloud */}
+            <Card className="bg-white/5 border-white/10 rounded-2xl p-8">
+                <CardTitle className="text-lg font-black tracking-widest uppercase mb-6 flex items-center gap-2">
+                    <Award className="w-5 h-5 text-primary" />
+                    Competencies
+                </CardTitle>
+                <div className="flex flex-wrap gap-2">
+                    {tags.map((tag: string, i: number) => (
+                        <Badge key={i} className="bg-white/10 hover:bg-primary/20 hover:text-primary transition-colors text-white/70 border-none px-3 py-1 font-bold text-[10px] uppercase tracking-widest">
+                            {tag}
+                        </Badge>
+                    ))}
+                    {tags.length === 0 && <span className="text-muted-foreground text-sm font-bold uppercase italic">General Proficiency</span>}
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-5 w-5 text-muted-foreground" />
-                    <span className="text-sm">Completion Rate</span>
-                  </div>
-                  <span className="font-medium">89%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <HelpCircle className="h-5 w-5 text-muted-foreground" />
-                    <span className="text-sm">Attempts</span>
-                  </div>
-                  <span className="font-medium">1,243</span>
-                </div>
-              </CardContent>
             </Card>
 
-            {/* Tips Card */}
-            <Card className="border shadow-sm rounded-lg">
-              <CardHeader>
-                <CardTitle>Preparation Tips</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-0.5">
-                    <BookOpen className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Review Key Concepts</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Focus on algebraic formulas and geometric theorems
-                    </p>
-                  </div>
+            {/* Pro Tips */}
+            <Card className="bg-white/5 border-white/10 rounded-2xl p-8 border-l-2 border-l-primary/50">
+                <CardTitle className="text-lg font-black tracking-widest uppercase mb-6 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    Proctor Tips
+                </CardTitle>
+                <div className="space-y-6">
+                    <div className="flex gap-4">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 border border-primary/20">
+                            <Zap className="w-5 h-5 fill-current" />
+                        </div>
+                        <div>
+                            <div className="font-black text-xs uppercase tracking-widest mb-1">Pace Yourself</div>
+                            <div className="text-[11px] text-muted-foreground font-medium leading-relaxed">Limit your time per question to ~{Math.round(exam.duration_minutes / totalQuestions)} minutes for optimal coverage.</div>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-0.5">
-                    <Clock className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Time Management</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Spend about 2 minutes per question to complete on time
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-0.5">
-                    <HelpCircle className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Answer Strategically</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Skip difficult questions and return to them later
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
             </Card>
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+function ListIcon(props: any) {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <line x1="8" y1="6" x2="21" y2="6" />
+            <line x1="8" y1="12" x2="21" y2="12" />
+            <line x1="8" y1="18" x2="21" y2="18" />
+            <line x1="3" y1="6" x2="3.01" y2="6" />
+            <line x1="3" y1="12" x2="3.01" y2="12" />
+            <line x1="3" y1="18" x2="3.01" y2="18" />
+        </svg>
+    );
 }

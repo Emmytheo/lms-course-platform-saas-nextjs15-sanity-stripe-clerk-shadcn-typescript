@@ -1,0 +1,624 @@
+[
+  {
+    "id": 1,
+    "slug": "full-stack-web-development",
+    "title": "Full Stack Web Development",
+    "description": "Become a full-stack web developer with this comprehensive program covering front-end and back-end technologies.",
+    "type": "Self Paced",
+    "tags": ["web development", "javascript", "react", "node.js", "mongodb", "html", "css", "express"],
+    "price": 299,
+    "duration": "6 months",
+    "image": "/images/full-stack-path.jpg",
+    "level": "Beginner to Advanced",
+    "enrollmentCount": 1247,
+    "rating": 4.8,
+    "instructors": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Senior Full Stack Developer",
+        "avatar": "/images/instructors/sarah.jpg",
+        "bio": "10+ years experience in web development",
+        "expertise": ["React", "Node.js", "MongoDB"]
+      },
+      {
+        "name": "Mike Chen",
+        "role": "React Specialist",
+        "avatar": "/images/instructors/mike.jpg",
+        "bio": "Former Facebook engineer, React core contributor",
+        "expertise": ["React", "TypeScript", "Frontend Architecture"]
+      }
+    ],
+    "features": [
+      "Certificate of Completion",
+      "Project Portfolio",
+      "Career Support",
+      "Lifetime Access",
+      "Community Access",
+      "Code Reviews",
+      "Real-world Projects"
+    ],
+    "objectives": [
+      "Build responsive web applications",
+      "Master JavaScript and modern frameworks",
+      "Understand database design and APIs",
+      "Deploy applications to production",
+      "Learn version control with Git",
+      "Implement authentication and security"
+    ],
+    "courses": [
+      {
+        "id": 101,
+        "slug": "html-css-fundamentals",
+        "title": "HTML5 & CSS3 Fundamentals",
+        "duration": "4 weeks",
+        "progress": 100,
+        "type": "course",
+        
+        "url": "/courses/mastering-microsoft-word",
+        "description": "Learn the building blocks of web development"
+      },
+      {
+        "id": 102,
+        "slug": "javascript-mastery",
+        "title": "JavaScript Mastery",
+        "duration": "6 weeks",
+        "progress": 85,
+        "type": "course",
+        "url": "/courses/javascript-mastery",
+        "description": "Master JavaScript from basics to advanced concepts"
+      },
+      {
+        "id": 103,
+        "slug": "react-complete-guide",
+        "title": "React Complete Guide",
+        "duration": "8 weeks",
+        "progress": 60,
+        "type": "course",
+        "url": "/courses/react-complete-guide",
+        "description": "Build modern web applications with React"
+      },
+      {
+        "id": 104,
+        "slug": "node-js-backend",
+        "title": "Node.js Backend Development",
+        "duration": "6 weeks",
+        "progress": 30,
+        "type": "course",
+        "url": "/courses/node-js-backend",
+        "description": "Create robust backend services with Node.js"
+      }
+    ],
+    "exams": [
+      {
+        "id": 201,
+        "slug": "frontend-assessment",
+        "title": "Frontend Development Assessment",
+        "duration": "90 minutes",
+        "score": 92,
+        "type": "exam",
+        "url": "/cbt/exam/3",
+        "description": "Test your frontend development skills"
+      },
+      {
+        "id": 202,
+        "slug": "javascript-exam",
+        "title": "JavaScript Proficiency Exam",
+        "duration": "120 minutes",
+        "score": 88,
+        "type": "exam",
+        "url": "/exam/javascript-proficiency",
+        "description": "Assess your JavaScript knowledge"
+      },
+      {
+        "id": 203,
+        "slug": "full-stack-final",
+        "title": "Full Stack Final Exam",
+        "duration": "180 minutes",
+        "score": null,
+        "type": "exam",
+        "url": "/exam/full-stack-final",
+        "description": "Comprehensive full-stack development exam"
+      }
+    ],
+    "practicals": [
+      {
+        "id": 301,
+        "slug": "ecommerce-project",
+        "title": "E-commerce Project",
+        "duration": "2 weeks",
+        "status": "completed",
+        "type": "practical",
+        "url": "/practicals/ecommerce-project",
+        "description": "Build a complete e-commerce application"
+      },
+      {
+        "id": 302,
+        "slug": "social-media-app",
+        "title": "Social Media Application",
+        "duration": "3 weeks",
+        "status": "in-progress",
+        "type": "practical",
+        "url": "/practicals/social-media-app",
+        "description": "Create a social media platform with real-time features"
+      }
+    ],
+    "challenges": [
+      {
+        "id": 401,
+        "slug": "code-optimization",
+        "title": "Code Optimization Challenge",
+        "duration": "48 hours",
+        "rank": 15,
+        "type": "challenge",
+        "url": "/challenges/code-optimization",
+        "description": "Optimize performance-critical code"
+      },
+      {
+        "id": 402,
+        "slug": "api-design",
+        "title": "API Design Challenge",
+        "duration": "72 hours",
+        "rank": null,
+        "type": "challenge",
+        "url": "/challenges/api-design",
+        "description": "Design and implement RESTful APIs"
+      }
+    ],
+    "certification": {
+      "name": "Full Stack Web Developer",
+      "issuer": "Tech Academy",
+      "validity": "Lifetime",
+      "requirements": [
+        "Complete all courses", 
+        "Pass final assessment", 
+        "Build capstone project",
+        "Achieve 85%+ average score"
+      ],
+      "url": "/certifications/full-stack-developer"
+    },
+    "timeline": [
+      {
+        "week": 1,
+        "title": "Web Fundamentals",
+        "activities": ["HTML/CSS Basics", "Git Version Control", "First Website"],
+        "milestone": "Basic Website Deployment"
+      },
+      {
+        "week": 2,
+        "title": "JavaScript Basics",
+        "activities": ["Variables & Functions", "DOM Manipulation", "Mini Projects"],
+        "milestone": "Interactive Web Pages"
+      },
+      {
+        "week": 3,
+        "title": "Advanced JavaScript",
+        "activities": ["ES6+ Features", "Async Programming", "APIs Integration"],
+        "milestone": "API Consumption"
+      },
+      {
+        "week": 4,
+        "title": "React Fundamentals",
+        "activities": ["Components", "State Management", "Hooks"],
+        "milestone": "First React App"
+      }
+    ],
+    "prerequisites": ["Basic computer skills", "Understanding of logic"],
+    "careerOutcomes": ["Frontend Developer", "Backend Developer", "Full Stack Engineer"],
+    "startDate": "2024-01-15",
+    "enrollmentDeadline": "2024-02-28"
+  },
+  {
+    "id": 2,
+    "slug": "data-science-professional",
+    "title": "Data Science Professional",
+    "description": "Master data analysis, machine learning, and statistical modeling to become a data science expert.",
+    "type": "Instructor Led",
+    "tags": ["data science", "python", "machine learning", "statistics", "data analysis", "pandas", "numpy", "scikit-learn"],
+    "price": 499,
+    "duration": "9 months",
+    "image": "/images/data-science-path.jpg",
+    "level": "Intermediate",
+    "enrollmentCount": 892,
+    "rating": 4.9,
+    "instructors": [
+      {
+        "name": "Dr. Emily Rodriguez",
+        "role": "Data Science Lead",
+        "avatar": "/images/instructors/emily.jpg",
+        "bio": "PhD in Statistics, 8 years at Google AI",
+        "expertise": ["Machine Learning", "Statistical Modeling", "Big Data"]
+      },
+      {
+        "name": "Alex Thompson",
+        "role": "Machine Learning Engineer",
+        "avatar": "/images/instructors/alex.jpg",
+        "bio": "Specialist in deep learning and neural networks",
+        "expertise": ["Deep Learning", "Computer Vision", "NLP"]
+      }
+    ],
+    "features": [
+      "Industry Certification",
+      "Real-world Projects",
+      "Mentorship Program",
+      "Job Placement Assistance",
+      "Research Opportunities",
+      "Kaggle Competitions",
+      "Portfolio Building"
+    ],
+    "objectives": [
+      "Master statistical analysis and hypothesis testing",
+      "Build and deploy machine learning models",
+      "Work with big data technologies",
+      "Create data visualization dashboards",
+      "Understand ethical AI principles",
+      "Prepare for data science interviews"
+    ],
+    "courses": [
+      {
+        "id": 201,
+        "slug": "python-data-science",
+        "title": "Python for Data Science",
+        "duration": "5 weeks",
+        "progress": 100,
+        "type": "course",
+        "url": "/courses/python-data-science",
+        "description": "Python programming for data analysis"
+      },
+      {
+        "id": 202,
+        "slug": "statistical-methods",
+        "title": "Statistical Methods",
+        "duration": "6 weeks",
+        "progress": 75,
+        "type": "course",
+        "url": "/courses/statistical-methods",
+        "description": "Advanced statistical analysis techniques"
+      },
+      {
+        "id": 203,
+        "slug": "machine-learning",
+        "title": "Machine Learning Fundamentals",
+        "duration": "8 weeks",
+        "progress": 50,
+        "type": "course",
+        "url": "/courses/machine-learning",
+        "description": "Supervised and unsupervised learning"
+      },
+      {
+        "id": 204,
+        "slug": "deep-learning",
+        "title": "Deep Learning Advanced",
+        "duration": "7 weeks",
+        "progress": 0,
+        "type": "course",
+        "url": "/courses/deep-learning",
+        "description": "Neural networks and deep learning"
+      }
+    ],
+    "exams": [
+      {
+        "id": 202,
+        "slug": "statistical-analysis-test",
+        "title": "Statistical Analysis Test",
+        "duration": "120 minutes",
+        "score": 95,
+        "type": "exam",
+        "url": "/exam/statistical-analysis-test",
+        "description": "Comprehensive statistical analysis exam"
+      },
+      {
+        "id": 205,
+        "slug": "ml-algorithms-exam",
+        "title": "ML Algorithms Exam",
+        "duration": "150 minutes",
+        "score": 87,
+        "type": "exam",
+        "url": "/exam/ml-algorithms-exam",
+        "description": "Machine learning algorithms assessment"
+      },
+      {
+        "id": 206,
+        "slug": "data-science-capstone",
+        "title": "Data Science Capstone Exam",
+        "duration": "240 minutes",
+        "score": null,
+        "type": "exam",
+        "url": "/exam/data-science-capstone",
+        "description": "Final data science certification exam"
+      }
+    ],
+    "practicals": [
+      {
+        "id": 303,
+        "slug": "predictive-modeling",
+        "title": "Predictive Modeling Project",
+        "duration": "3 weeks",
+        "status": "completed",
+        "type": "practical",
+        "url": "/practicals/predictive-modeling",
+        "description": "Build predictive models for real datasets"
+      },
+      {
+        "id": 304,
+        "slug": "data-pipeline",
+        "title": "Data Pipeline Implementation",
+        "duration": "4 weeks",
+        "status": "in-progress",
+        "type": "practical",
+        "url": "/practicals/data-pipeline",
+        "description": "Create end-to-end data processing pipelines"
+      }
+    ],
+    "challenges": [
+      {
+        "id": 403,
+        "slug": "kaggle-competition",
+        "title": "Kaggle Style Competition",
+        "duration": "1 week",
+        "rank": 8,
+        "type": "challenge",
+        "url": "/challenges/kaggle-competition",
+        "description": "Compete in a real-world data science challenge"
+      },
+      {
+        "id": 404,
+        "slug": "algorithm-optimization",
+        "title": "Algorithm Optimization Challenge",
+        "duration": "96 hours",
+        "rank": null,
+        "type": "challenge",
+        "url": "/challenges/algorithm-optimization",
+        "description": "Optimize machine learning algorithms"
+      }
+    ],
+    "certification": {
+      "name": "Certified Data Scientist",
+      "issuer": "Data Science Council",
+      "validity": "3 years",
+      "requirements": [
+        "Complete all modules", 
+        "Pass certification exam", 
+        "Submit research paper",
+        "Maintain 90%+ average score"
+      ],
+      "url": "/certifications/certified-data-scientist"
+    },
+    "timeline": [
+      {
+        "week": 1,
+        "title": "Python & Data Analysis",
+        "activities": ["Pandas/Numpy", "Data Cleaning", "Exploratory Analysis"],
+        "milestone": "First Data Analysis Report"
+      },
+      {
+        "week": 2,
+        "title": "Statistical Foundations",
+        "activities": ["Probability", "Hypothesis Testing", "Regression"],
+        "milestone": "Statistical Inference"
+      },
+      {
+        "week": 3,
+        "title": "Machine Learning Intro",
+        "activities": ["Classification", "Clustering", "Model Evaluation"],
+        "milestone": "First ML Model"
+      },
+      {
+        "week": 4,
+        "title": "Advanced ML Techniques",
+        "activities": ["Ensemble Methods", "Neural Networks", "Model Deployment"],
+        "milestone": "Deployed ML Service"
+      }
+    ],
+    "prerequisites": ["Basic programming knowledge", "Understanding of algebra"],
+    "careerOutcomes": ["Data Scientist", "ML Engineer", "Data Analyst"],
+    "startDate": "2024-02-01",
+    "enrollmentDeadline": "2024-03-15"
+  },
+  {
+    "id": 3,
+    "slug": "cybersecurity-bootcamp",
+    "title": "Cybersecurity Bootcamp",
+    "description": "Intensive training program to become a cybersecurity analyst with hands-on security testing.",
+    "type": "Instructor Led",
+    "tags": ["cybersecurity", "ethical hacking", "network security", "penetration testing", "digital forensics", "incident response"],
+    "price": 799,
+    "duration": "12 weeks",
+    "image": "/images/cybersecurity-path.jpg",
+    "level": "Advanced",
+    "enrollmentCount": 567,
+    "rating": 4.7,
+    "instructors": [
+      {
+        "name": "Marcus Johnson",
+        "role": "Chief Security Officer",
+        "avatar": "/images/instructors/marcus.jpg",
+        "bio": "15+ years in cybersecurity, former government security specialist",
+        "expertise": ["Network Security", "Penetration Testing", "Security Architecture"]
+      },
+      {
+        "name": "Lisa Wang",
+        "role": "Ethical Hacking Expert",
+        "avatar": "/images/instructors/lisa.jpg",
+        "bio": "Certified Ethical Hacker, bug bounty hunter",
+        "expertise": ["Ethical Hacking", "Vulnerability Assessment", "Red Teaming"]
+      }
+    ],
+    "features": [
+      "Hands-on Labs",
+      "Security Certifications",
+      "Capture The Flag Events",
+      "Industry Networking",
+      "Real-world Scenarios",
+      "Career Coaching",
+      "Security Tools Access"
+    ],
+    "objectives": [
+      "Master network security principles",
+      "Perform ethical hacking and penetration testing",
+      "Implement security controls and policies",
+      "Conduct digital forensics investigations",
+      "Respond to security incidents",
+      "Prepare for industry certifications"
+    ],
+    "courses": [
+      {
+        "id": 301,
+        "slug": "network-security",
+        "title": "Network Security Fundamentals",
+        "duration": "4 weeks",
+        "progress": 100,
+        "type": "course",
+        "url": "/courses/network-security",
+        "description": "Network security protocols and implementations"
+      },
+      {
+        "id": 302,
+        "slug": "ethical-hacking",
+        "title": "Ethical Hacking Techniques",
+        "duration": "5 weeks",
+        "progress": 80,
+        "type": "course",
+        "url": "/courses/ethical-hacking",
+        "description": "Legal hacking methodologies and tools"
+      },
+      {
+        "id": 303,
+        "slug": "digital-forensics",
+        "title": "Digital Forensics",
+        "duration": "4 weeks",
+        "progress": 40,
+        "type": "course",
+        "url": "/courses/digital-forensics",
+        "description": "Evidence collection and analysis"
+      },
+      {
+        "id": 304,
+        "slug": "incident-response",
+        "title": "Incident Response",
+        "duration": "3 weeks",
+        "progress": 0,
+        "type": "course",
+        "url": "/courses/incident-response",
+        "description": "Security incident management"
+      }
+    ],
+    "exams": [
+      {
+        "id": 301,
+        "slug": "security-foundations",
+        "title": "Security Foundations Exam",
+        "duration": "90 minutes",
+        "score": 94,
+        "type": "exam",
+        "url": "/exam/security-foundations",
+        "description": "Cybersecurity fundamentals assessment"
+      },
+      {
+        "id": 302,
+        "slug": "penetration-testing",
+        "title": "Penetration Testing Practical",
+        "duration": "180 minutes",
+        "score": 89,
+        "type": "exam",
+        "url": "/exam/penetration-testing",
+        "description": "Hands-on penetration testing exam"
+      },
+      {
+        "id": 303,
+        "slug": "cybersecurity-capstone",
+        "title": "Cybersecurity Capstone",
+        "duration": "360 minutes",
+        "score": null,
+        "type": "exam",
+        "url": "/exam/cybersecurity-capstone",
+        "description": "Comprehensive security assessment"
+      }
+    ],
+    "practicals": [
+      {
+        "id": 305,
+        "slug": "vulnerability-assessment",
+        "title": "Vulnerability Assessment",
+        "duration": "2 weeks",
+        "status": "completed",
+        "type": "practical",
+        "url": "/practicals/vulnerability-assessment",
+        "description": "Conduct full vulnerability assessment"
+      },
+      {
+        "id": 306,
+        "slug": "security-audit",
+        "title": "Security Audit Simulation",
+        "duration": "3 weeks",
+        "status": "in-progress",
+        "type": "practical",
+        "url": "/practicals/security-audit",
+        "description": "Perform comprehensive security audit"
+      }
+    ],
+    "challenges": [
+      {
+        "id": 405,
+        "slug": "capture-the-flag",
+        "title": "Capture The Flag Challenge",
+        "duration": "72 hours",
+        "rank": 12,
+        "type": "challenge",
+        "url": "/challenges/capture-the-flag",
+        "description": "Competitive security challenge"
+      },
+      {
+        "id": 406,
+        "slug": "bug-bounty",
+        "title": "Bug Bounty Simulation",
+        "duration": "1 week",
+        "rank": null,
+        "type": "challenge",
+        "url": "/challenges/bug-bounty",
+        "description": "Find and report vulnerabilities"
+      }
+    ],
+    "certification": {
+      "name": "Cybersecurity Analyst",
+      "issuer": "Security Professionals Association",
+      "validity": "2 years",
+      "requirements": [
+        "Complete bootcamp", 
+        "Pass practical exams", 
+        "Participate in CTF",
+        "Submit security report"
+      ],
+      "url": "/certifications/cybersecurity-analyst"
+    },
+    "timeline": [
+      {
+        "week": 1,
+        "title": "Security Fundamentals",
+        "activities": ["Security Principles", "Threat Landscape", "Basic Tools"],
+        "milestone": "Security Assessment"
+      },
+      {
+        "week": 2,
+        "title": "Network Security",
+        "activities": ["Firewalls", "IDS/IPS", "Network Monitoring"],
+        "milestone": "Network Hardening"
+      },
+      {
+        "week": 3,
+        "title": "Penetration Testing",
+        "activities": ["Reconnaissance", "Exploitation", "Post-Exploitation"],
+        "milestone": "First Penetration Test"
+      },
+      {
+        "week": 4,
+        "title": "Incident Response",
+        "activities": ["Detection", "Containment", "Recovery"],
+        "milestone": "Incident Response Plan"
+      }
+    ],
+    "prerequisites": ["Networking basics", "Linux command line"],
+    "careerOutcomes": ["Security Analyst", "Penetration Tester", "Security Engineer"],
+    "startDate": "2024-03-01",
+    "enrollmentDeadline": "2024-04-15"
+  }
+]
